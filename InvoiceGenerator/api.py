@@ -3,7 +3,7 @@
 import decimal
 from decimal import Decimal
 
-from InvoiceGenerator.conf import _
+from InvoiceGenerator.conf import LANGUAGE, _
 
 import qrcode
 
@@ -238,11 +238,16 @@ class Invoice(UnicodeProperty):
     #:  taxable date
     taxable_date = None
     #: currency_locale: locale according to which will be the written currency representations
-    currency_locale = "cs_CZ.UTF-8"
+    currency_locale = "ca_ES.UTF-8"
     #: currency identifier (e.g. "$" or "Kč")
-    currency = u"Kč"
+    if LANGUAGE == 'ca' or LANGUAGE == 'es':
+        currency = u"€"
+    else:
+        currency = u"€"
 
     use_tax = False
+
+    conditions = "Per qualsevol dubte sobre la forma de pagament o la vencibilitat d'aquesta factura siusplau consulteu via e-mail o telf."
 
     #: round result to integers?
     rounding_result = False
