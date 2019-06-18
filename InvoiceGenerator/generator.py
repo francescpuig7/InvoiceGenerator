@@ -174,15 +174,15 @@ class Invoice:
     def drawClient(self, TOP, LEFT):
         self._drawAddress(TOP, LEFT, "Odběratel", self.client)
 
-        # self.pdf.setFont("DejaVu", 12)
-        # self.pdf.drawString((LEFT)*mm, (TOP)*mm, "Odběratel")
-        # self.pdf.setFont("DejaVu", 8)
-        # text = self.pdf.beginText((LEFT+2)*mm, (TOP-6)*mm)
-        # text.textLines("\n".join(self.client.getAddressLines()))
-        # self.pdf.drawText(text)
-        # text = self.pdf.beginText((LEFT+2)*mm, (TOP-28)*mm)
-        # text.textLines("\n".join(self.client.getContactLines()))
-        # self.pdf.drawText(text)
+        self.pdf.setFont("DejaVu", 12)
+        self.pdf.drawString((LEFT)*mm, (TOP)*mm, "Odběratel")
+        self.pdf.setFont("DejaVu", 8)
+        text = self.pdf.beginText((LEFT+2)*mm, (TOP-6)*mm)
+        text.textLines("\n".join(self.client.getAddressLines()))
+        self.pdf.drawText(text)
+        text = self.pdf.beginText((LEFT+2)*mm, (TOP-28)*mm)
+        text.textLines("\n".join(self.client.getContactLines()))
+        self.pdf.drawText(text)
 
     def drawProvider(self, TOP, LEFT):
         self._drawAddress(TOP, LEFT, "Dodavatel", self.provider)
