@@ -145,7 +145,7 @@ class SimpleInvoice(BaseInvoice):
         self._drawTitle()
         self._drawProvider(self.TOP - 10, self.LEFT + 3)
         self._drawClient(self.TOP - 39, self.LEFT + 91)
-        self._drawPayment(self.TOP - 47, self.LEFT + 3)
+        #self._drawPayment(self.TOP - 47, self.LEFT + 3)
         self._drawQR(self.TOP - 39.4, self.LEFT + 61, 75.0)
         self._drawDates(self.TOP - 18, self.LEFT + 91)
         self._drawItems(self.TOP - 80, self.LEFT)
